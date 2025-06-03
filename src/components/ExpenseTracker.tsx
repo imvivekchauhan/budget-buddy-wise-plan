@@ -123,7 +123,7 @@ const ExpenseTracker = () => {
           </p>
         </div>
 
-        {/* Summary Cards */}
+        {/* Summary Cards - Only show real data */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <Card className="card-hover">
             <CardContent className="p-6 text-center">
@@ -262,7 +262,7 @@ const ExpenseTracker = () => {
           </Card>
         )}
 
-        {/* Expenses List */}
+        {/* Expenses List - Only shows real data from database */}
         <Card>
           <CardContent className="p-0">
             {isLoading ? (
@@ -322,6 +322,7 @@ const ExpenseTracker = () => {
           </CardContent>
         </Card>
 
+        {/* Show empty state only when no expenses exist */}
         {filteredExpenses.length === 0 && !isLoading && (
           <div className="text-center py-12">
             <TrendingDown className="h-12 w-12 text-gray-300 mx-auto mb-4" />
