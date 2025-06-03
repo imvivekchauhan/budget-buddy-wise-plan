@@ -41,7 +41,8 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
         <div className="particle particle-4"></div>
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .robot-container {
           position: relative;
           animation: float 3s ease-in-out infinite;
@@ -218,7 +219,8 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
             opacity: 1;
           }
         }
-      `}</style>
+        `
+      }} />
     </div>
   )
 }
